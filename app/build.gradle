@@ -1,0 +1,60 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+}
+apply from: '../shared_dependencies.gradle'
+
+android {
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.dicoding.android.wikinime"
+        minSdk 23
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+        }
+        debug {
+            minifyEnabled true
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+    lintOptions {
+        abortOnError false
+    }
+    namespace 'com.dicoding.android.wikinime'
+    dynamicFeatures = [':favorite']
+}
+
+dependencies {
+    implementation project(":core")
+
+    // SpinKit
+    implementation 'com.github.ybq:Android-SpinKit:1.4.0'
+
+    // Chip Navbar
+    implementation 'com.github.ismaeldivita:chip-navigation-bar:1.4.0'
+
+    // Toasty
+    implementation 'com.github.GrenderG:Toasty:1.5.2'
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+}

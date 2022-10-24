@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_observe"
+        android:title="@string/observe"
+        android:icon="@drawable/ic_observe"
+        app:cnb_iconColor="@color/green_dark"/>
+    <item
+        android:id="@+id/menu_favorite"
+        android:title="@string/favorite"
+        android:icon="@drawable/ic_favorite_outline"
+        app:cnb_iconColor="@color/gray_dark"/>
+</menu>

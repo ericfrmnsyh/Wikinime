@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/menu_observe">
+
+    <fragment
+        android:id="@+id/menu_observe"
+        android:name="com.dicoding.android.wikinime.observe.ObserveFragment"
+        android:label="fragment_discover"
+        tools:layout="@layout/fragment_observe" >
+        <action
+            android:id="@+id/action_menu_observe_to_menu_favorite"
+            app:destination="@id/menu_favorite" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/menu_favorite"
+        android:name="com.dicoding.android.wikinime.favorite.favorite.FavoriteFragment"
+        android:label="fragment_favorite"
+        tools:layout="@layout/fragment_favorite" >
+        <action
+            android:id="@+id/action_menu_favorite_to_menu_observe"
+            app:destination="@id/menu_favorite" />
+
+    </fragment>
+
+</navigation>
