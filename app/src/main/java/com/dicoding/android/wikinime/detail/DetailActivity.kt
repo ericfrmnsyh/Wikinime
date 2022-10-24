@@ -61,11 +61,9 @@ class DetailActivity : AppCompatActivity() {
                                 imgPosterDetail.loadImage(anime.posterImage?.original)
                                 imgCoverDetail.loadImage(anime.coverImage?.original)
                                 tvPopularityDetail.text =
-                                    //anime.popularityRank.toString()
                                     getString(R.string.popularity_rank, anime.popularityRank)
                                 tvFavoriteCountDetail.text = anime.favoritesCount?.toString() ?: "-"
                                 tvEpisodeDetail.text =
-                                    //anime.episodeCount.toString()
                                     getString(R.string.episode_count, anime.episodeCount)
                                 tvAverageRatingDetail.text = anime.averageRating ?: "-"
                                 tvUserCountDetail.text = anime.userCount?.toString() ?: "-"
