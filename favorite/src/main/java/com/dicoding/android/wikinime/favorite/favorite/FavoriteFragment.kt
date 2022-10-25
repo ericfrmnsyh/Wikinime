@@ -42,8 +42,7 @@ class FavoriteFragment() : Fragment(), AnimeAdapter.AnimeCallback {
         )
     }
 
-    private var _binding: FragmentFavoriteBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var binding: FragmentFavoriteBinding
     private val favoriteAdapter = AnimeAdapter(this)
     private val favoriteViewModel: FavoriteViewModel by sharedGraphViewModel(R.id.main_navigation)
 
@@ -51,7 +50,7 @@ class FavoriteFragment() : Fragment(), AnimeAdapter.AnimeCallback {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentFavoriteBinding.inflate(layoutInflater, container, false)
+        binding = FragmentFavoriteBinding.inflate(layoutInflater, container, false)
 
         loadKoinModules(favoriteModule)
         return binding.root
@@ -67,11 +66,6 @@ class FavoriteFragment() : Fragment(), AnimeAdapter.AnimeCallback {
     override fun onStop() {
         super.onStop()
         unloadKoinModules(favoriteModule)
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 
     private fun setupViewModel() {

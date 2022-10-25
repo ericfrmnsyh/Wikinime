@@ -3,13 +3,13 @@ package com.dicoding.android.wikinime.detail
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.dicoding.android.wikinime.R
 import com.dicoding.android.wikinime.core.data.Resource
 import com.dicoding.android.wikinime.core.domain.model.Anime
 import com.dicoding.android.wikinime.core.utils.loadImage
 import com.dicoding.android.wikinime.databinding.ActivityDetailBinding
-import es.dmoral.toasty.Toasty
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -34,10 +34,10 @@ class DetailActivity : AppCompatActivity() {
             anime?.let { anime ->
                 if (statusFavorite) {
                     detailViewModel.insertFavoriteAnime(anime)
-                    Toasty.success(this, "Added to Favorite", Toasty.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Added to Favorite", Toast.LENGTH_SHORT).show()
                 } else {
                     detailViewModel.deleteFavoriteAnime(anime)
-                    Toasty.error(this, "Removed from Favorite", Toasty.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Removed from Favorite", Toast.LENGTH_SHORT).show()
                 }
                 setStatusFavorite(statusFavorite)
             }
@@ -79,7 +79,7 @@ class DetailActivity : AppCompatActivity() {
                     }
                     is Resource.Error -> {
                         it.message?.let { error ->
-                            Toasty.warning(this, error, Toasty.LENGTH_SHORT).show()
+                            Toast.makeText(this, error, Toast.LENGTH_SHORT).show()
                         }
                         showLoading(false)
                     }

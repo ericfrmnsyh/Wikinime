@@ -14,12 +14,6 @@ class AnimeAdapter(private val callback: AnimeCallback) :
 
     private var mData = ArrayList<Anime>()
 
-    /*fun setData(data: ArrayList<Anime>) {
-        mData.clear()
-        mData.addAll(data)
-        notifyDataSetChanged()
-    }*/
-
     fun setData(newData: ArrayList<Anime>){
         val diffUtil = MyDiffUtil(mData, newData)
         val diffResult = DiffUtil.calculateDiff(diffUtil)

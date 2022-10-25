@@ -21,9 +21,11 @@ android {
     buildTypes {
         release {
             minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug {
             minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
     compileOptions {
@@ -37,8 +39,20 @@ android {
         viewBinding true
     }
     lintOptions {
+        disable 'TypographyFractions','TypographyQuotes'
+        // Mengkatifkan Issue ID yang disebutkan.
+        enable 'RtlHardcoded','RtlCompat', 'RtlEnabled'
+        // Untuk memeriksa Issue ID tertentu saja, yang lainnya akan dihiraukan
+        // Ia akan menghiraukan kode enable dan disable yang sebelumnya
+        checkOnly 'NewApi', 'InlinedApi'
+        // Jika true, report hasil lint akan dinonaktifkan
+        quiet true
+        // Jika true (default), proses build akan dihentikan jika ada eror.
         abortOnError false
+        // Jika true, hanya memberikan report eror.
+        ignoreWarnings true
     }
+
     namespace 'com.dicoding.android.wikinime'
     dynamicFeatures = [':favorite']
 }

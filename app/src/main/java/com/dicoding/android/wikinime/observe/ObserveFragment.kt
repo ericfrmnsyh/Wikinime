@@ -19,9 +19,8 @@ import com.dicoding.android.wikinime.detail.DetailActivity
 import es.dmoral.toasty.Toasty
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class ObserveFragment() : Fragment(), AnimeAdapter.AnimeCallback {
-    private var _binding: FragmentObserveBinding? = null
-    private val binding get() = _binding!!
+class ObserveFragment : Fragment(), AnimeAdapter.AnimeCallback {
+    private lateinit var binding: FragmentObserveBinding
     private lateinit var searchView: SearchView
     private val observeViewModel: ObserveViewModel by viewModel()
     private val animeAdapter = AnimeAdapter(this)
@@ -35,14 +34,9 @@ class ObserveFragment() : Fragment(), AnimeAdapter.AnimeCallback {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentObserveBinding.inflate(inflater, container, false)
+        binding = FragmentObserveBinding.inflate(inflater, container, false)
 
         return binding.root
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
