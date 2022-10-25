@@ -23,4 +23,6 @@
     <string name="empty_favorite">Empty Favorite.\nTry add favorite from discover</string>\
     <string name="episode_count">%d Episode(s)</string>
     <string name="title_favorite">Favorite</string>
+    <string name="add">Added to Favorite</string>
+    <string name="remove">Removed from Favorite</string>
 </resources>

@@ -24,4 +24,6 @@
     <string name="empty_favorite">Favorit kosong.\nCoba tambahkan favorit di menu temukan</string>
     <string name="episode_count">%d Episode(s)</string>
     <string name="title_favorite">Favorit</string>
+    <string name="add">Ditambahkan ke Favorit</string>
+    <string name="remove">Dihapus dari Favorit</string>
 </resources>

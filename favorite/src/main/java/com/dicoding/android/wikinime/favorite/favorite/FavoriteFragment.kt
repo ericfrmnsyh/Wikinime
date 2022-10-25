@@ -25,7 +25,7 @@ import org.koin.core.context.unloadKoinModules
 import org.koin.core.parameter.ParametersDefinition
 import org.koin.core.qualifier.Qualifier
 
-class FavoriteFragment() : Fragment(), AnimeAdapter.AnimeCallback {
+class FavoriteFragment : Fragment(), AnimeAdapter.AnimeCallback {
     private inline fun <reified VM : ViewModel> Fragment.sharedGraphViewModel(
         @IdRes navGraphId: Int,
         qualifier: Qualifier? = null,

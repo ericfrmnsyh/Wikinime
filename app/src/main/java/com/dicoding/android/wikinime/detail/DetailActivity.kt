@@ -34,10 +34,10 @@ class DetailActivity : AppCompatActivity() {
             anime?.let { anime ->
                 if (statusFavorite) {
                     detailViewModel.insertFavoriteAnime(anime)
-                    Toast.makeText(this, "Added to Favorite", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, R.string.add, Toast.LENGTH_SHORT).show()
                 } else {
                     detailViewModel.deleteFavoriteAnime(anime)
-                    Toast.makeText(this, "Removed from Favorite", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, R.string.remove, Toast.LENGTH_SHORT).show()
                 }
                 setStatusFavorite(statusFavorite)
             }
